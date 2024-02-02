@@ -186,8 +186,8 @@ section{
     top: 50%;
     right: 0;
     transform: translateY(-50%);
-    width: 623px;
-    height:697px;
+    width: 660px;
+    height:660px;
     /* background:red; */
     overflow: hidden;
     pointer-events: none;
