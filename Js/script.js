@@ -66,3 +66,46 @@ ScrollReveal().reveal('.home-img img, .about-img img, .skills-container, .portfo
 ScrollReveal().reveal('.home-content h1,.about-content', { origin: 'left' });
 
 ScrollReveal().reveal('.home-content h3,.home-content p,.about-content p', { origin: 'right' });
+
+
+// Contact Form EmaiJS function
+
+
+//emailjs.init("my_user_id");
+
+// https://dashboard.emailjs.com/admin 
+
+// i have used this emailjs service to configure the email js settings once the user submitted their details
+// whatever the details which is will be submitted by user that will be send to my mail
+document.addEventListener('DOMContentLoaded',function(){
+    emailjs.init("fKQt7ncFJ4-p81N1Z");
+    var contact_Form=document.getElementById('contact_form');
+    if(contact_Form){
+        contact_Form.addEventListener('submit',function(event){
+            event.preventDefault();
+            emailjs.sendForm('service_i1llqi9','template_n8mnhf2',this)
+            .then(function(){
+                console.log('Check your mail!!!');
+                mailSent.style.display='block';
+                // contactForm.reset();
+            },function(error){
+                console.log('Failed to Sent',error);
+            });
+        });
+    }
+});
+
+// window.onload=function(){
+//         document.getElementById('contact_form').addEventListener('submit',function(event){
+//         event.preventDefault();
+
+//         emailjs.sendForm('service_i1llqi9','template_n8mnhf2',this)
+//             .then(function(){
+//                 console.log('SUCCESS!');
+                                
+//             },function(error){
+//                 console.log('Failed',error);
+//         });
+
+//     });
+// }

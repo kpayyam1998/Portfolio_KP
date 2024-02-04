@@ -362,19 +362,22 @@
     <section class="contact" id="contact">
         <h2 class="heading">Contact<span>Me!</span></h2>
 
-        <form action="#">
+        <form action="" method="post"  id="contact_form">
             <div class="input-box">
-                <input type="text" placeholder="Full Name">
-                <input type="email" placeholder="Email Address">
+                <input type="text" placeholder="Full Name" name="full_name" id="full_name" required>
+                <input type="email" placeholder="Email Address" name="email_address" id="email_address" required>
 
             </div>
             <div class="input-box">
-                <input type="number" placeholder="Mobile Number">
-                <input type="text" placeholder="Subject">
+                <input type="number" placeholder="Mobile Number" name="mobile_number" id="mobile_number" required>
+                <input type="text" placeholder="Subject" name="subject" id="subject" required>
             </div>
-            <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
+            <textarea cols="30" rows="10" placeholder="Your Message" name="your_message" id="your_message" required></textarea>
             <input type="submit" value="Submit Message" class="btn">
         </form>
+        <div class="Mail-display" >
+            <p id="mailSent">Details Submitted Successfully</p>
+        </div>
     </section>
 
     <!-- Footer Design -->
@@ -396,7 +399,9 @@
     <!-- swapper .js -->
     <script src="Js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <script type="text/javascript">
             var swiper = new Swiper(".mySwiper", {
                 slidesPerView: 1,
                 spaceBetween: 50,
@@ -411,6 +416,7 @@
                 prevEl: ".swiper-button-prev",
                 },
             });    
+            
     </script>
 </body>
 </html>
